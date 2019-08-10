@@ -6,10 +6,10 @@ build_dir=build-dir-show-bug
 /bin/rm -rf $build_dir
 mkdir $build_dir
 cd $build_dir
-cmake .. && make -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
+cmake .. >& /dev/null && make -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend >& /dev/null
 grep 'CMakeFiles/test.dir/ice_flux.F90.o: CMakeFiles/test.dir/ice_state.mod.stamp' ./CMakeFiles/test.dir/depend.make >& /dev/null
 if [ $? -eq 0 ]; then
-    echo OK
+    echo WORKED
 else
-    echo FAIL
+    echo DEP SCAN FAILED
 fi
