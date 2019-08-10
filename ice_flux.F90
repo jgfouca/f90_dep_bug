@@ -7,7 +7,7 @@ module ice_flux
        daidtd  , &
        dvidtd
 
-  ! The presense of this segment breaks the detection of the ice_state dependency
+  ! The presence of this segment breaks the detection of the ice_state dependency
   real, dimension(1,2,3) :: &
 #ifdef FOO
        baz, &
